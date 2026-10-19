@@ -1,10 +1,7 @@
 # Builds the site and publishes it on GitHub Pages.
-# Runs on every push to main, by hand (Actions tab) and from Baserow:
-# - "baserow": a table changed (webhooks -> automation "Rebuild website").
-#   Waits 10 minutes; every further change restarts the wait, so one editing
-#   session gives one build.
-# - "publish": the "Publish now" button in Baserow (automation "Publish now"),
-#   builds right away.
+# Runs on every push to main, by hand (Actions tab) and when someone clicks
+# "Publish now" in Baserow (table "Publish" -> automation "Publish now" ->
+# repository_dispatch with event type "publish").
 name: Deploy
 
 on:
@@ -12,7 +9,7 @@ on:
     branches: [main]
   workflow_dispatch:
   repository_dispatch:
-    types: [baserow, publish]
+    types: [publish]
 
 permissions:
   contents: read
@@ -20,18 +17,7 @@ permissions:
   id-token: write
 
 jobs:
-  wait:
-    if: github.event.action == 'baserow'
-    runs-on: ubuntu-latest
-    concurrency:
-      group: baserow-wait
-      cancel-in-progress: true
-    steps:
-      - run: sleep 600
-
   build:
-    needs: wait
-    if: always() && (needs.wait.result == 'success' || needs.wait.result == 'skipped')
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -55,8 +41,6 @@ jobs:
 
   deploy:
     needs: build
-    # a skipped "wait" would otherwise skip this job too
-    if: always() && needs.build.result == 'success'
     runs-on: ubuntu-latest
     concurrency:
       group: pages

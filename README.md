@@ -18,7 +18,7 @@ Website of Prof. Dr. Frederic Hanusch, Professor of Planetary Change and Politic
 
 ## Editing content
 
-All texts, lists and photos are edited in Baserow (workspace "Hanusch.Earth", database "Webseite"). Rows appear in the order they have in Baserow; publications and media are sorted by year automatically. After a change, the site is rebuilt by the GitHub Action.
+All texts, lists and photos are edited in Baserow (workspace "Hanusch.Earth", database "Webseite"). Rows appear in the order they have in Baserow; publications and media are sorted by year automatically. When you are done, click "Publish now" in the table "Publish"; the site is rebuilt by the GitHub Action about 2 minutes later.
 
 ## Local development
 
@@ -38,4 +38,4 @@ npm run build    # pulls Baserow content (if BASEROW_TOKEN is set) and builds to
 - the repository secret `BASEROW_TOKEN`,
 - Pages set to "GitHub Actions" with the custom domain `www.hanusch.earth`.
 
-Content changes in Baserow start a build as well: every table has a webhook "Rebuild website" that calls the Baserow automation "Website" → workflow "Rebuild website", which sends a `repository_dispatch` (event type `baserow`) to this repository. Such a run waits 10 minutes and is cancelled by the next change, so an editing session ends in one build. To publish at once, use the button in the Baserow table "Publish" (workflow "Publish now", event type `publish`). That request uses a fine-grained GitHub token (this repository only, Contents read/write, no expiry); if it is ever revoked, create a new one and replace it in the HTTP request step of both automation workflows. A build can always be started by hand under Actions → Deploy → Run workflow.
+Changes in Baserow are published with the button "Publish now" in the Baserow table "Publish": it calls the Baserow automation "Website" → workflow "Publish now", which sends a `repository_dispatch` (event type `publish`) to this repository. That request uses a fine-grained GitHub token (this repository only, Contents read/write, no expiry); if it is ever revoked, create a new one and replace it in the workflow's HTTP request step. (The tables also carry webhooks "Rebuild website" for automatic builds; they are switched off.) A build can always be started by hand under Actions → Deploy → Run workflow.

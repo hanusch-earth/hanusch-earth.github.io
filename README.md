@@ -14,6 +14,7 @@ Website of Prof. Dr. Frederic Hanusch, Professor of Planetary Change and Politic
 | `site/src/assets/img/` | photos and covers (resized at build time) |
 | `site/public/` | fonts, audio, favicons, share image, robots.txt |
 | `site/scripts/fetch-cms.mjs` | pulls the content from Baserow |
+| `.claude/skills/hanusch-website/` | skill for editing the content with Claude (Baserow + publish) |
 | `PRODUCT.md`, `DESIGN.md`, `.impeccable/` | product context and design system |
 
 ## Editing content

@@ -14,6 +14,12 @@
 !/.impeccable/surfaces/
 /.impeccable/surfaces/*
 !/.impeccable/surfaces/site-v2.md
+!/.claude/
+/.claude/*
+!/.claude/skills/
+/.claude/skills/*
+!/.claude/skills/hanusch-website/
+__pycache__/
 
 # Astro starter readme; the project readme is at the root
 /site/README.md

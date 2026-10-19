@@ -64,7 +64,15 @@ const byYear = (list) => list.map((r, i) => [r, i]).sort(([a, i], [b, j]) => (Nu
 const num = (v) => (v == null || v === '' ? undefined : Number(v));
 const paragraphs = (v) => text(v).split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean);
 const links = (v) =>
-  text(v).split('\n').map((l) => l.split('|').map((s) => s.trim())).filter(([label, url]) => label && url).map(([label, url]) => ({ label, url }));
+  text(v).split('\n').map((l) => l.split('|').map((s) => s.trim())).filter(([label, url]) => label && URL.canParse(url)).map(([label, url]) => ({ label, url }));
+
+/** Leaves out entries with an empty required field, so one unfinished row in Baserow does not stop the whole build. */
+const complete = (table, required) => (list) =>
+  list.filter((e) => {
+    const missing = required.filter((k) => e[k] == null || e[k] === '');
+    if (missing.length) console.log(`${process.env.GITHUB_ACTIONS ? '::warning::' : ''}[cms] skipped ${table} "${e.title}": ${missing.join(', ')} missing`);
+    return !missing.length;
+  });
 
 function slugger() {
   const seen = new Set();
@@ -180,7 +188,7 @@ await write('publications', publications);
 
 const FORMAT = { Writing: 'text', Audio: 'audio', Video: 'video' };
 const mediaSlug = slugger();
-await write('media', byYear(await rows(tables, 'Media')).map((m, i) => clean({
+await write('media', complete('Media', ['year'])(byYear(await rows(tables, 'Media')).map((m, i) => clean({
   id: mediaSlug(m.Title),
   order: order(i),
   year: num(m.Year),
@@ -192,11 +200,11 @@ await write('media', byYear(await rows(tables, 'Media')).map((m, i) => clean({
   audio: text(m['Audio file']),
   duration: num(m['Duration (seconds)']),
   links: links(m.Links),
-})));
+}))));
 
 for (const [table, file, prefix] of [['CV', 'cv', 'cv-'], ['Teaching', 'teaching', 't-']]) {
   const slug = slugger();
-  await write(file, (await rows(tables, table)).map((r, i) => clean({
+  await write(file, complete(table, ['section', 'period'])((await rows(tables, table)).map((r, i) => clean({
     id: slug(r.Title, prefix),
     order: order(i),
     section: sectionKey.get(linked(r.Section)) ?? '',
@@ -205,17 +213,17 @@ for (const [table, file, prefix] of [['CV', 'cv', 'cv-'], ['Teaching', 'teaching
     details: text(r.Details),
     url: text(r.URL),
     links: links(r.Links),
-  })));
+  }))));
 }
 
 const areaSlug = slugger();
-await write('research-areas', (await rows(tables, 'Research areas')).map((r, i) => ({
+await write('research-areas', complete('Research areas', ['text'])((await rows(tables, 'Research areas')).map((r, i) => ({
   id: areaSlug(r.Title), order: order(i), title: text(r.Title), text: text(r.Text),
-})));
+}))));
 
 const projectSlug = slugger();
-await write('projects', (await rows(tables, 'Projects')).map((r, i) => clean({
+await write('projects', complete('Projects', ['period', 'text'])((await rows(tables, 'Projects')).map((r, i) => clean({
   id: projectSlug(r.Title), order: order(i), period: text(r.Period), title: text(r.Title), text: text(r.Text), links: links(r.Links),
-})));
+}))));
 
 console.log('[cms] content pulled from Baserow');

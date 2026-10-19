@@ -1,6 +1,6 @@
 # hanusch.earth
 
-Website of Prof. Dr. Frederic Hanusch, Professor of Planetary Change and Politics at Justus Liebig University Giessen. Live at https://www.hanusch.earth.
+Website of Prof. Dr. Frederic Hanusch, Professor of Planetary Change and Politics at Justus Liebig University Giessen. Live at https://www.hanusch.earth (test address until the domain moves: https://hanusch-earth.github.io).
 
 ## Structure
 
@@ -36,5 +36,4 @@ npm run build    # pulls Baserow content (if BASEROW_TOKEN is set) and builds to
 `.github/workflows/deploy.yml` builds on every push to `main` and publishes to GitHub Pages. It needs:
 
 - the repository secret `BASEROW_TOKEN`,
-- Pages set to "GitHub Actions" with the custom domain `www.hanusch.earth`,
-- the repository variable `PAGES_ENABLED` set to `true`.
+- Pages set to "GitHub Actions" with the custom domain `www.hanusch.earth`.

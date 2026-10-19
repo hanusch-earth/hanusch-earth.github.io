@@ -43,9 +43,6 @@ jobs:
           path: site/dist
 
   deploy:
-    # Publishing starts once Pages is switched on and the repository
-    # variable PAGES_ENABLED is set to "true".
-    if: vars.PAGES_ENABLED == 'true'
     needs: build
     runs-on: ubuntu-latest
     environment:

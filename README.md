@@ -37,3 +37,5 @@ npm run build    # pulls Baserow content (if BASEROW_TOKEN is set) and builds to
 
 - the repository secret `BASEROW_TOKEN`,
 - Pages set to "GitHub Actions" with the custom domain `www.hanusch.earth`.
+
+Content changes in Baserow start a build as well: every table has a webhook "Rebuild website" that calls the Baserow automation "Website" → workflow "Rebuild website", which sends a `repository_dispatch` (event type `baserow`) to this repository. That request uses a fine-grained GitHub token (this repository only, Contents read/write) that expires after one year; when it does, create a new one and replace it in the automation's HTTP request step. A build can always be started by hand under Actions → Deploy → Run workflow.

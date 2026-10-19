@@ -1,7 +1,7 @@
 # Builds the site and publishes it on GitHub Pages.
-# Runs on every push to main, by hand (Actions tab) and when a Baserow
-# webhook reports a row change (repository_dispatch; Baserow sends its own
-# event type, e.g. "rows.updated").
+# Runs on every push to main, by hand (Actions tab) and when content changes
+# in Baserow (table webhooks -> Baserow automation "Rebuild website" ->
+# repository_dispatch with event type "baserow").
 name: Deploy
 
 on:
@@ -9,7 +9,7 @@ on:
     branches: [main]
   workflow_dispatch:
   repository_dispatch:
-    types: [rows.created, rows.updated, rows.deleted]
+    types: [baserow]
 
 permissions:
   contents: read

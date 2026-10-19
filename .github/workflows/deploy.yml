@@ -55,6 +55,8 @@ jobs:
 
   deploy:
     needs: build
+    # a skipped "wait" would otherwise skip this job too
+    if: always() && needs.build.result == 'success'
     runs-on: ubuntu-latest
     concurrency:
       group: pages

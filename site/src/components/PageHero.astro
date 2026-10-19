@@ -1,0 +1,32 @@
+---
+// Title, horizon rule, then intro on the left and photo on the right.
+import Img from './Img.astro';
+
+interface Props {
+  title: string;
+  intro?: string[];
+  figure?: { src: string; alt: string; caption?: string; ratio?: string };
+}
+const { title, intro = [], figure } = Astro.props;
+const [lead, ...rest] = intro;
+const hasBody = intro.length > 0 || !!figure || Astro.slots.has('default');
+---
+<section class="hero">
+  <div class="wrap">
+    <h1>{title}</h1>
+    <div class="rule" aria-hidden="true"></div>
+    {hasBody && <div class:list={["grid", { "has-fig": !!figure }]}>
+      <div class="body">
+        {lead && <p class="lead" set:html={lead} />}
+        {rest.map((p) => <p set:html={p} />)}
+        <slot />
+      </div>
+      {figure && (
+        <figure class="fig" style={figure.ratio ? `--ratio:${figure.ratio}` : undefined}>
+          <Img src={figure.src} alt={figure.alt} widths={[480, 720, 960, 1280]} sizes="(min-width: 1440px) 640px, (min-width: 1100px) 46vw, (min-width: 761px) 720px, 100vw" loading="eager" />
+          {figure.caption && <figcaption>{figure.caption}</figcaption>}
+        </figure>
+      )}
+    </div>}
+  </div>
+</section>

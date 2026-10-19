@@ -1,0 +1,25 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import Section from '../components/Section.astro';
+import Rows from '../components/Rows.astro';
+import { getPage, list } from '../lib/content';
+
+const page = await getPage('research');
+const [areasSec, projectsSec] = page.sections;
+const areas = (await list('researchAreas'));
+const projects = (await list('projects'));
+---
+<Base title={page.title} description={page.description} current="/research/">
+  <PageHero title={page.title} intro={page.intro} figure={page.figure} />
+  <Section id={areasSec.key} heading={areasSec.heading}>
+    <div class="areas">
+      <div class="rows">
+        {areas.map((a) => <article class="r"><h3>{a.title}</h3><p class="t">{a.text}</p></article>)}
+      </div>
+    </div>
+  </Section>
+  <Section id={projectsSec.key} heading={projectsSec.heading}>
+    <Rows rows={projects} group={false} />
+  </Section>
+</Base>

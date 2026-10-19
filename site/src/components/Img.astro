@@ -1,0 +1,25 @@
+---
+// Responsive image. A file name from src/assets/img/ is resized at build time
+// (srcset in WebP); anything else (a CMS URL later) is used as it is.
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+const files = import.meta.glob<{ default: ImageMetadata }>('../assets/img/*.{jpg,jpeg,png,webp}', { eager: true });
+
+interface Props {
+  src: string;
+  alt: string;
+  widths: number[];
+  sizes: string;
+  class?: string;
+  loading?: 'lazy' | 'eager';
+  fetchpriority?: 'high' | 'auto';
+}
+const { src, alt, widths, sizes, class: cls, loading = 'lazy', fetchpriority } = Astro.props;
+const local = files[`../assets/img/${src}`]?.default;
+---
+{local ? (
+  <Image src={local} alt={alt} widths={widths} sizes={sizes} class={cls} loading={loading} fetchpriority={fetchpriority} decoding="async" />
+) : (
+  <img src={src} alt={alt} class={cls} loading={loading} fetchpriority={fetchpriority} decoding="async" />
+)}

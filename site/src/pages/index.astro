@@ -1,0 +1,56 @@
+---
+import { getEntry } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Section from '../components/Section.astro';
+import Icon from '../components/Icon.astro';
+import Img from '../components/Img.astro';
+import { site } from '../lib/content';
+
+const featured = (await getEntry('publications', site.featured.publication))!.data;
+const [mailUser, mailHost] = site.email.split('@');
+---
+<Base current="/">
+  <section class="intro">
+    <div class="wrap">
+      <div class="top">
+        <h1>{site.name}</h1>
+        <div class="ph">
+          <Img src={site.portrait.src} alt={site.portrait.alt} widths={[240, 360, 480, 720]} sizes="(min-width: 1440px) 312px, (min-width: 721px) 22vw, 36vw" loading="eager" fetchpriority="high" />
+          <p class="credit">{site.portrait.credit}</p>
+        </div>
+      </div>
+      <div class="rule" aria-hidden="true"></div>
+      <div class="txt">
+        <p class="role">{site.role}</p>
+        <p set:html={site.intro} />
+      </div>
+    </div>
+  </section>
+
+  <Section id="current" heading="Current">
+    <article class="feature">
+      {featured.cover && (
+        <a href={site.featured.link.url} tabindex="-1" aria-hidden="true"><Img class="cover" src={featured.cover} alt={featured.coverAlt ?? ''} widths={[260, 340, 520, 600]} sizes="(min-width: 761px) 340px, 260px" /></a>
+      )}
+      <div>
+        <h3>{featured.title}</h3>
+        <p class="sub">{site.featured.subtitle}</p>
+        <p class="meta">{site.featured.label}</p>
+        <p class="t">{site.featured.text}</p>
+        <p class="c">{site.featured.credits}</p>
+        <p class="l">
+          <a class="ext" href={site.featured.link.url}>{site.featured.link.label}<Icon name="ext" /></a>
+          {featured.openAccess && <a class="ext" href={featured.openAccess}>Open access<Icon name="ext" /></a>}
+        </p>
+      </div>
+    </article>
+  </Section>
+
+  <Section id="contact" heading="Contact">
+    <p>{site.contactLead}</p>
+    <a class="mail" href={`mailto:${site.email}`}><span>{mailUser}</span><wbr /><span>@{mailHost}</span></a>
+    <nav class="profiles" aria-label="Academic profiles">
+      {site.profiles.map((p) => <a class="ext" href={p.url}>{p.label}<Icon name="ext" /></a>)}
+    </nav>
+  </Section>
+</Base>

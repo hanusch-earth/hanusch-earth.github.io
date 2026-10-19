@@ -1,0 +1,250 @@
+[
+  {
+    "id": "beyond-the-global-why-human-geography-needs-the-planetary",
+    "order": 10,
+    "year": 2026,
+    "title": "Beyond the global: Why human geography needs the planetary",
+    "url": "https://doi.org/10.55203/YPDK8837",
+    "details": "Geography Directions · Essay · 19 May 2026",
+    "format": "text"
+  },
+  {
+    "id": "one-institute-is-not-enough-form-follows-planet",
+    "order": 20,
+    "year": 2026,
+    "title": "One Institute Is Not Enough: Form Follows Planet",
+    "url": "https://thenew.institute/en/reflections/frederic-hanusch",
+    "details": "THE NEW INSTITUTE · Essay · 12 March 2026",
+    "format": "text"
+  },
+  {
+    "id": "the-politics-of-planetary-color",
+    "order": 30,
+    "year": 2026,
+    "title": "The Politics of Planetary Color",
+    "url": "https://www.noemamag.com/the-politics-of-planetary-color/",
+    "details": "Noema · Essay · 15 January 2026",
+    "format": "text"
+  },
+  {
+    "id": "versteht-euch-endlich-als-teil-des-planeten",
+    "order": 40,
+    "year": 2025,
+    "title": "Versteht euch endlich als Teil des Planeten!",
+    "url": "https://www.zeit.de/2026/01/planetares-denken-frederic-hanusch-claus-leggewie-justus-liebig-universitaet-giessen",
+    "details": "DIE ZEIT · with Claus Leggewie · 30 December 2025 · German",
+    "format": "text",
+    "language": "German"
+  },
+  {
+    "id": "willkommen-in-der-planetendemokratie",
+    "order": 50,
+    "year": 2025,
+    "title": "Willkommen in der Planetendemokratie",
+    "url": "https://www.faz.net/aktuell/feuilleton/buecher/sachbuch/claus-leggewie-und-frederic-hanusch-ueber-la-condition-planetaire-110779074.html",
+    "details": "Frankfurter Allgemeine Zeitung · with Claus Leggewie · 14 November 2025 · German",
+    "format": "text",
+    "language": "German"
+  },
+  {
+    "id": "planetary-politics-begins-with-sensing-agency",
+    "order": 60,
+    "year": 2025,
+    "title": "Planetary Politics Begins with Sensing Agency",
+    "url": "https://mothrights.org/article/planetary-politics-begin-with-sensing-agency/",
+    "details": "More Than Human Life (MOTH), New York University · Essay · 31 October 2025",
+    "format": "text"
+  },
+  {
+    "id": "planetare-demokratie-einbezug-der-nichtmenschlichen",
+    "order": 70,
+    "year": 2024,
+    "title": "Planetare Demokratie: Einbezug der Nichtmenschlichen",
+    "url": "https://www.furche.at/chancen/planetare-demokratie-einbezug-der-nichtmenschlichen-12946525",
+    "details": "Die Furche · Interview · 8 March 2024 · German",
+    "format": "text",
+    "language": "German"
+  },
+  {
+    "id": "how-can-deliberative-democracy-listen-to-nonhumans",
+    "order": 80,
+    "year": 2024,
+    "title": "How can deliberative democracy listen to nonhumans?",
+    "url": "https://www.youtube.com/watch?v=5YXmrO7Fonw",
+    "details": "Centre for Deliberative Democracy, University of Canberra · Video, with Danielle Celermajer · 20 February 2024",
+    "format": "video"
+  },
+  {
+    "id": "radikaler-aktivismus-wie-viel-klimaprotest-vertragt-die-demokratie",
+    "order": 90,
+    "year": 2023,
+    "title": "Radikaler Aktivismus – Wie viel Klimaprotest verträgt die Demokratie?",
+    "url": "https://www.deutschlandfunk.de/radikaler-aktivismus-wie-viel-klima-protest-vertraegt-demokratie-dlf-7b8f2bce-100.html",
+    "details": "Deutschlandfunk, Zur Diskussion · Radio · 31 May 2023 · German",
+    "format": "audio",
+    "language": "German",
+    "audio": "/audio/2023-deutschlandfunk-radikaler-aktivismus.mp3",
+    "duration": 2614
+  },
+  {
+    "id": "how-can-we-think-like-a-planet",
+    "order": 100,
+    "year": 2023,
+    "title": "How can we think like a planet?",
+    "url": "https://futurium.de/en/blog/wie-denkt-man-wie-ein-planet",
+    "details": "Futurium · Interview · 15 March 2023",
+    "format": "text"
+  },
+  {
+    "id": "zukunft-gestalten",
+    "order": 110,
+    "year": 2022,
+    "title": "Zukunft gestalten",
+    "url": "https://www.3sat.de/wissen/scobel/scobel---zukunft-gestalten-100.html",
+    "details": "3sat, scobel · Television · 17 November 2022 · German",
+    "format": "video",
+    "language": "German"
+  },
+  {
+    "id": "zukunft-ohne-illusion",
+    "order": 120,
+    "year": 2022,
+    "title": "Zukunft ohne Illusion",
+    "details": "Frankfurter Allgemeine Zeitung · Appearance · 29 July 2022 · German",
+    "format": "text",
+    "language": "German"
+  },
+  {
+    "id": "wir-leben-nicht-auf-einem-planeten-wir-sind-teil-von-ihm",
+    "order": 130,
+    "year": 2021,
+    "title": "Wir leben nicht auf einem Planeten, wir sind Teil von ihm",
+    "url": "https://lisa.gerda-henkel-stiftung.de/planetar_denken",
+    "details": "L.I.S.A. Wissenschaftsportal, Gerda Henkel Stiftung · 9 November 2021 · German",
+    "format": "text",
+    "language": "German"
+  },
+  {
+    "id": "planetares-denken-uber-demokratie-und-nachhaltigkeit",
+    "order": 140,
+    "year": 2020,
+    "title": "Planetares Denken: Über Demokratie und Nachhaltigkeit",
+    "url": "https://www.hessen-schafft-wissen.de/artikel/podcast-c-leggewie-f-hanusch",
+    "details": "Hessen schafft Wissen · Podcast, with Claus Leggewie · 29 September 2020 · German",
+    "format": "audio",
+    "language": "German",
+    "audio": "/audio/2020-hessen-schafft-wissen-planetar-denken.mp3",
+    "duration": 3461
+  },
+  {
+    "id": "einstieg-ins-planetare-denken",
+    "order": 150,
+    "year": 2020,
+    "title": "Einstieg ins planetare Denken",
+    "url": "https://www.faz.net/aktuell/karriere-hochschule/hoersaal/sozialwissenschaften-einstieg-ins-planetare-denken-16889043.html",
+    "details": "Frankfurter Allgemeine Zeitung · with Claus Leggewie · 5 August 2020 · German",
+    "format": "text",
+    "language": "German"
+  },
+  {
+    "id": "wissenschaftler-an-die-macht",
+    "order": 160,
+    "year": 2019,
+    "title": "Wissenschaftler an die Macht?",
+    "url": "https://www.spiegel.de/panorama/technokratie-was-passiert-wenn-forscherinnen-und-forscher-regieren-a-8d9c320c-bf77-4edd-80c3-fbfb6caa3c3f",
+    "details": "bento / Spiegel Online · Interview · 19 December 2019 · German",
+    "format": "text",
+    "language": "German"
+  },
+  {
+    "id": "weckruf-oder-panikmache-braucht-das-klima-eine-oko-revolution",
+    "order": 170,
+    "year": 2019,
+    "title": "Weckruf oder Panikmache: Braucht das Klima eine Öko-Revolution?",
+    "url": "https://www1.wdr.de/daserste/hartaberfair/faktencheck/faktencheck-364.html",
+    "details": "ARD, hart aber fair · Expert for the fact check · 2 December 2019 · German",
+    "format": "text",
+    "language": "German"
+  },
+  {
+    "id": "als-gabe-es-kein-morgen-kann-die-demokratie-das-klima-schutzen",
+    "order": 180,
+    "year": 2019,
+    "title": "Als gäbe es kein Morgen… Kann die Demokratie das Klima schützen?",
+    "url": "https://www.swr.de/swr2/leben-und-gesellschaft/swr2-forum-20191128-kann-die-demokratie-das-klima-schuetzen-100.html",
+    "details": "SWR2 Forum · Radio · 28 November 2019 · German",
+    "format": "audio",
+    "language": "German",
+    "audio": "/audio/2019-swr2-forum-demokratie-klima.mp3",
+    "duration": 2661
+  },
+  {
+    "id": "wie-gut-gemeinte-klimapolitik-scheitern-kann",
+    "order": 190,
+    "year": 2018,
+    "title": "Wie gut gemeinte Klimapolitik scheitern kann",
+    "url": "https://www.riffreporter.de/de/umwelt/interview-hanusch-demokratie-klima",
+    "details": "RiffReporter · Interview · 22 May 2018 · German",
+    "format": "text",
+    "language": "German"
+  },
+  {
+    "id": "earth101-lectures",
+    "order": 200,
+    "year": 2018,
+    "title": "Earth101 lectures",
+    "details": "Video",
+    "format": "video",
+    "links": [
+      {
+        "label": "The Democracy-Climate-Nexus",
+        "url": "https://www.youtube.com/watch?v=CpNUNKoZNyM"
+      },
+      {
+        "label": "Learning from Canada’s Kyoto Protocol Process",
+        "url": "https://www.youtube.com/watch?v=T5s8fEzUuK8"
+      },
+      {
+        "label": "Global Change Challenges: It’s about Time",
+        "url": "https://www.youtube.com/watch?v=NtugdNukZLE"
+      }
+    ]
+  },
+  {
+    "id": "zukunft-denken-wie-futurpoliten-ihre-zeit-nachhaltiger-nutzen",
+    "order": 210,
+    "year": 2017,
+    "title": "Zukunft denken – Wie Futurpoliten ihre Zeit nachhaltiger nutzen",
+    "details": "Deutschlandradio · Radio · 13 July 2017 · German",
+    "format": "audio",
+    "language": "German"
+  },
+  {
+    "id": "uber-die-folgen-der-plagiatsaufdeckungen",
+    "order": 220,
+    "year": 2014,
+    "title": "Über die Folgen der Plagiatsaufdeckungen",
+    "details": "Mitbestimmung. Das Magazin der Hans-Böckler-Stiftung 5/2014, 56–57 · German",
+    "format": "text",
+    "language": "German"
+  },
+  {
+    "id": "wir-wollen-eure-scheisse-auch-nicht",
+    "order": 230,
+    "year": 2013,
+    "title": "Wir wollen eure Scheiße auch nicht",
+    "details": "Landwirtschaftliches Wochenblatt Westfalen-Lippe 38 · with Müngersdorff · 19 September 2013 · German",
+    "format": "text",
+    "language": "German"
+  },
+  {
+    "id": "rufmord-darf-sich-nicht-lohnen",
+    "order": 240,
+    "year": 2013,
+    "title": "Rufmord darf sich nicht lohnen",
+    "url": "https://www.faz.net/aktuell/feuilleton/geisteswissenschaften/angeblicher-plagiatsfall-steinmeier-rufmord-darf-sich-nicht-lohnen-12608057.html",
+    "details": "Frankfurter Allgemeine Sonntagszeitung · with Claus Leggewie · 9 March 2013 · German",
+    "format": "text",
+    "language": "German"
+  }
+]

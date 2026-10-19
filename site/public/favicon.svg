@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+<rect width="64" height="64" rx="14" fill="#0B0D0F"/>
+<g transform="translate(9 9) scale(.46)">
+<clipPath id="c"><circle cx="50" cy="50" r="50"/></clipPath>
+<mask id="m"><rect x="-6" y="-6" width="112" height="112" fill="#000"/><circle cx="50" cy="50" r="50" fill="#fff"/><path d="M-4 53 Q50 46 104 53" fill="none" stroke="#000" stroke-width="9.5"/></mask>
+<path d="M-4 53 Q50 46 104 53" fill="none" stroke="#D7FF00" stroke-width="13" clip-path="url(#c)"/>
+<rect x="-6" y="-6" width="112" height="112" fill="#F4F2ED" mask="url(#m)"/>
+</g>
+</svg>

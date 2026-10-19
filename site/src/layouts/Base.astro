@@ -1,0 +1,143 @@
+---
+import '../styles/site.css';
+import Mark from '../components/Mark.astro';
+import Icon from '../components/Icon.astro';
+import { site, list } from '../lib/content';
+
+interface Props {
+  title?: string;
+  description?: string;
+  current?: string;
+  noindex?: boolean;
+  /** Extra schema.org nodes for this page, added to the site-wide graph. */
+  schema?: Record<string, unknown>[];
+}
+const { title, description = site.description, current, noindex = false, schema = [] } = Astro.props;
+const fullTitle = title ? `${title} · ${site.name}` : `${site.name} · Planetary Change and Politics`;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const nav = [
+  { href: '/cv/', label: 'CV' },
+  { href: '/research/', label: 'Research' },
+  { href: '/publications/', label: 'Publications' },
+  { href: '/teaching/', label: 'Teaching' },
+  { href: '/media/', label: 'Media' },
+  { href: '/contact/', label: 'Contact' },
+];
+const home = Astro.site!.href;
+const person = {
+  '@type': 'Person',
+  '@id': `${home}#person`,
+  name: site.name,
+  honorificPrefix: 'Prof. Dr.',
+  jobTitle: 'Professor of Planetary Change and Politics',
+  description: site.description,
+  affiliation: { '@type': 'CollegeOrUniversity', name: 'Justus Liebig University Giessen', url: 'https://www.uni-giessen.de' },
+  worksFor: { '@type': 'CollegeOrUniversity', name: 'Justus Liebig University Giessen', url: 'https://www.uni-giessen.de' },
+  knowsAbout: ['Planetary politics', 'Planetary thinking', 'Politics of deep time', 'Democracy and climate change', ...(await list('researchAreas')).map((a) => a.title)],
+  url: home,
+  image: new URL(`/img/${site.portrait.src}`, Astro.site).href,
+  email: `mailto:${site.email}`,
+  sameAs: site.profiles.map((p) => p.url),
+};
+const graph = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    { '@type': 'WebSite', '@id': `${home}#website`, url: home, name: site.name, inLanguage: 'en', publisher: { '@id': `${home}#person` } },
+    person,
+    ...schema,
+  ],
+};
+const year = new Date().getFullYear();
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <script is:inline>document.documentElement.classList.add('js')</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{fullTitle}</title>
+  <meta name="description" content={description} />
+  {noindex ? <meta name="robots" content="noindex" /> : <link rel="canonical" href={canonical} />}
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content={site.name} />
+  <meta property="og:title" content={fullTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content={new URL('/img/share.jpg', Astro.site)} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#0B0D0F" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="preload" href="/fonts/space-grotesk-latin-300-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/space-grotesk-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/source-sans-3-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <script type="application/ld+json" set:html={JSON.stringify(graph)} />
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-head">
+    <div class="wrap">
+      <div class="bar">
+        <a class="brand" href="/" aria-label={`${site.name}, home`}>
+          <Mark id="mk-head" />
+          <span>{site.name}</span>
+        </a>
+        <nav class="nav" aria-label="Main">
+          {nav.map((n) => <a href={n.href} aria-current={current === n.href ? 'page' : undefined}>{n.label}</a>)}
+        </nav>
+        <button class="menubtn" type="button" data-menu-open aria-controls="site-menu" aria-expanded="false">
+          <span>Menu</span><i aria-hidden="true"><b></b><b></b></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="menu" role="dialog" id="site-menu" hidden aria-modal="true" aria-label="Menu">
+    <div class="wrap">
+      <div class="bar">
+        <a class="brand" href="/" data-menu-close aria-label={`${site.name}, home`}>
+          <Mark id="mk-menu" />
+          <span>{site.name}</span>
+        </a>
+        <button class="closebtn" type="button" data-menu-close><span>Close</span><Icon name="close" /></button>
+      </div>
+      <nav aria-label="Main">
+        {nav.map((n) => (
+          <a href={n.href} aria-current={current === n.href ? 'page' : undefined}><span>{n.label}</span><Icon name="arrow" /></a>
+        ))}
+      </nav>
+      <div class="foot"><a href={`mailto:${site.email}`}>{site.email}</a></div>
+    </div>
+  </div>
+
+  <main id="main">
+    <slot />
+  </main>
+
+  <footer class="site-foot">
+    <div class="wrap">
+      <div class="in">
+        <div class="who">
+          <Mark id="mk-foot" />
+          <div>
+            <p class="n">{site.name}</p>
+            <p class="tl">{site.tagline}</p>
+          </div>
+        </div>
+        <div class="meta">
+          <span>© {year} {site.name}</span>
+          <a href="/legal-notice/">Legal notice</a>
+          <a href="/privacy/">Privacy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../scripts/site.ts"></script>
+</body>
+</html>

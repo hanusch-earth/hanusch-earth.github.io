@@ -1,0 +1,20 @@
+---
+// Legal notice and privacy: same layout, text sections from the pages collection.
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import Section from '../components/Section.astro';
+import { getPage } from '../lib/content';
+
+export function getStaticPaths() {
+  return [{ params: { legal: 'legal-notice' } }, { params: { legal: 'privacy' } }];
+}
+const page = await getPage(Astro.params.legal!);
+---
+<Base title={page.title} description={page.description}>
+  <PageHero title={page.title} intro={page.intro} />
+  {page.sections.map((s) => (
+    <Section id={s.key} heading={s.heading}>
+      <div class="legal" set:html={s.html} />
+    </Section>
+  ))}
+</Base>

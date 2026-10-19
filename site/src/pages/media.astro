@@ -1,0 +1,40 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import Section from '../components/Section.astro';
+import Icon from '../components/Icon.astro';
+import AudioPlayer from '../components/AudioPlayer.astro';
+import FilterBar from '../components/FilterBar.astro';
+import { getPage, list, withYearGroups, mediaFormats, splitLang } from '../lib/content';
+
+const page = await getPage('media');
+const [sec] = page.sections;
+const items = (await list('media'));
+const filters = [
+  { key: 'all', label: 'All' },
+  ...(Object.keys(mediaFormats) as (keyof typeof mediaFormats)[]).map((k) => ({ key: k, label: mediaFormats[k] })),
+];
+---
+<Base title={page.title} description={page.description} current="/media/">
+  <PageHero title={page.title} intro={page.intro} figure={page.figure} />
+  <FilterBar label="Filter media" items=".r[data-format]" filterKey="format" filters={filters} heading={`#${sec.key}`} />
+
+  <Section id={sec.key} heading={sec.heading} note={sec.note}>
+    <div class="rows">
+      {withYearGroups(items, (m) => m.year).map(({ row: m, label, repeat }) => (
+        <article class:list={['r ic', { rep: repeat }]} data-format={m.format}>
+          <p class="y">{label}</p>
+          <Icon name={m.format} class="fi" label={mediaFormats[m.format]} />
+          <div>
+            <h3>{m.url ? <a href={m.url}>{m.title}<Icon name="ext" class="ti" /></a> : m.title}</h3>
+            {m.details && (() => { const [text, lang] = splitLang(m.details); return <p class="d">{text}{lang && <span class="tag">{lang}</span>}{m.format === 'audio' && !m.audio && !m.url && <span class="tag">Recording not online</span>}</p>; })()}
+            {m.audio && <AudioPlayer src={m.audio} title={m.title} duration={m.duration} />}
+            {m.links && (
+              <p class="l">{m.links.map((l) => <a class="ext" href={l.url}>{l.label}<Icon name="ext" /></a>)}</p>
+            )}
+          </div>
+        </article>
+      ))}
+    </div>
+  </Section>
+</Base>

@@ -1,0 +1,27 @@
+---
+// Filter row that sticks under the header while the list scrolls.
+// scripts/site.ts reads data-filter-items / data-filter-key and keeps the
+// choice in the URL (?filter=…); the status line announces the result.
+// Without JavaScript the row stays hidden (see .filterbar in site.css).
+interface Props {
+  label: string;
+  items: string;
+  filterKey: string;
+  filters: { key: string; label: string }[];
+  /** Optional heading that names the chosen filter instead of the full list. */
+  heading?: string;
+}
+const { label, items, filterKey, filters, heading } = Astro.props;
+---
+<div class="filterbar" data-filter-group data-filter-items={items} data-filter-key={filterKey} data-filter-heading={heading}>
+  <div class="wrap">
+    <div class="fb-in">
+      <div class="filter" role="group" aria-label={label}>
+        {filters.map((f) => (
+          <button type="button" data-filter={f.key} data-label={f.label} aria-pressed={f.key === 'all' ? 'true' : 'false'}>{f.label}</button>
+        ))}
+      </div>
+      <p class="sr-only" aria-live="polite" data-filter-status></p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "planetarity",
+    "order": 10,
+    "title": "Planetarity",
+    "text": "Phenomena in which planetary and anthropogenic forces intersect, from induced seismicity to anthropogenic space weather, and how societies can deal with forces beyond human control."
+  },
+  {
+    "id": "methods",
+    "order": 20,
+    "title": "Methods",
+    "text": "How the planetary becomes knowable: where planetary data begin, how observational units are formed, and which methods the humanities and social sciences need to study planetary change."
+  },
+  {
+    "id": "politics",
+    "order": 30,
+    "title": "Politics",
+    "text": "How planetary temporalities, from the electoral cycle to geological and cosmic timescales, can be politically institutionalized, why some democracies deal better with planetary change than others, and how nonhuman earthlings can be included in democratic politics."
+  }
+]

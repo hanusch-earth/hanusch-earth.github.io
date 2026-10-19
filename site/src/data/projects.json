@@ -1,0 +1,29 @@
+[
+  {
+    "id": "handbook-of-planetary-methods-for-the-humanities-and-social-sciences",
+    "order": 10,
+    "period": "Since 2026",
+    "title": "Handbook of Planetary Methods for the Humanities and Social Sciences",
+    "text": "A reference work of more than 40 chapters on the methods with which the humanities and social sciences study planetary change. With Clemens Finkelstein · Oxford University Press, under contract."
+  },
+  {
+    "id": "planet-as-method",
+    "order": 20,
+    "period": "2023 – 2024",
+    "title": "Planet as Method",
+    "text": "Seed funding to explore a new research field on planetary methods in the humanities and social sciences: a joint cluster of the Universities of Giessen, Marburg and Darmstadt, led by Giessen. With Sven Opitz · Research Campus of Central Hessen."
+  },
+  {
+    "id": "planetary-scholars-and-artists-in-residence-program",
+    "order": 30,
+    "period": "2021 – 2025",
+    "title": "Planetary Scholars and Artists in Residence Program",
+    "text": "Annual focal topics, fellowships for scholars and artists, collaborations with academic and non-academic partners, including a theatre and an art gallery, and the Planetary Futures competition. With Claus Leggewie · Hessian Ministry of Higher Education, Research, Science and the Arts.",
+    "links": [
+      {
+        "label": "Residency program",
+        "url": "https://www.uni-giessen.de/faculties/planetarythinking/fellowship-program"
+      }
+    ]
+  }
+]

@@ -1,0 +1,48 @@
+{
+  "name": "Frederic Hanusch",
+  "formalName": "Prof. Dr. Frederic Hanusch",
+  "tagline": "Planetary Change & Politics",
+  "role": "Professor of Planetary Change and Politics at Justus Liebig University Giessen",
+  "intro": "My work develops the <em>planetarities</em> as a new research field that engages with planetary change, and investigates planetary politics in particular.",
+  "description": "Frederic Hanusch, Professor of Planetary Change and Politics at Justus Liebig University Giessen, develops the planetarities as a new field of research.",
+  "email": "frederic.hanusch@uni-giessen.de",
+  "contactLead": "For collaborations, talks and media requests",
+  "portrait": {
+    "src": "portrait.jpg",
+    "alt": "Portrait of Frederic Hanusch",
+    "credit": "Photo: JLU / Rolf K. Wegst"
+  },
+  "featured": {
+    "publication": "our-planetary-condition",
+    "label": "New book · MIT Press 2026",
+    "subtitle": "Foundations for a Politics with the Earth",
+    "text": "Why we need a politics that operates with the Earth rather than merely on it: a structured analysis of nonliving, living and technological planetary agencies, and of what each contributes to a truly planetary political framework.",
+    "credits": "With Bauer, Finkelstein & Leggewie",
+    "link": {
+      "label": "MIT Press",
+      "url": "https://mitpress.mit.edu/9780262057011/our-planetary-condition/"
+    }
+  },
+  "profiles": [
+    {
+      "label": "ORCID",
+      "url": "https://orcid.org/0000-0002-1864-9284"
+    },
+    {
+      "label": "Google Scholar",
+      "url": "https://scholar.google.de/citations?user=tTkJxokAAAAJ"
+    },
+    {
+      "label": "ResearchGate",
+      "url": "https://www.researchgate.net/profile/Frederic-Hanusch"
+    },
+    {
+      "label": "Academia",
+      "url": "https://uni-giessen.academia.edu/FredericHanusch"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/frederichanusch/"
+    }
+  ]
+}

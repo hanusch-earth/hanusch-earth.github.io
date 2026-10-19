@@ -1,0 +1,79 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import Section from '../components/Section.astro';
+import Rows from '../components/Rows.astro';
+import Icon from '../components/Icon.astro';
+import Img from '../components/Img.astro';
+import FilterBar from '../components/FilterBar.astro';
+import { getPage, list, splitLang } from '../lib/content';
+
+const page = await getPage('publications');
+const all = (await list('publications'));
+
+// Section key -> publication categories and filter group
+const map: Record<string, { cats: string[]; filter: string }> = {
+  'pub-mono': { cats: ['monograph'], filter: 'books' },
+  'pub-edited': { cats: ['edited'], filter: 'books' },
+  'pub-articles': { cats: ['article'], filter: 'articles' },
+  'pub-chapters': { cats: ['chapter'], filter: 'chapters' },
+  'pub-other': { cats: ['other'], filter: 'other' },
+};
+const sections = page.sections.map((s) => {
+  const items = all.filter((p) => map[s.key].cats.includes(p.category));
+  return {
+    ...s,
+    filter: map[s.key].filter,
+    books: items.filter((p) => p.cover),
+    wip: items.filter((p) => p.status === 'in-progress'),
+    rows: items.filter((p) => !p.cover && p.status === 'published').map((p) => ({ ...p, period: p.year })),
+  };
+});
+const home = Astro.site!.href;
+const schema = all
+  .filter((p) => (p.category === 'monograph' || p.category === 'edited') && p.status === 'published')
+  .map((p) => ({
+    '@type': 'Book',
+    name: p.title,
+    [p.category === 'edited' ? 'editor' : 'author']: { '@id': `${home}#person` },
+    ...(p.year && { datePublished: String(p.year) }),
+    ...(p.publisher && { publisher: { '@type': 'Organization', name: p.publisher } }),
+    ...((p.url ?? p.doi) && { url: p.url ?? p.doi }),
+  }));
+const filters = [
+  { key: 'all', label: 'All' },
+  { key: 'books', label: 'Books' },
+  { key: 'articles', label: 'Journal articles' },
+  { key: 'chapters', label: 'Book chapters' },
+  { key: 'other', label: 'Reports & other' },
+];
+---
+<Base title={page.title} description={page.description} current="/publications/" schema={schema}>
+  <PageHero title={page.title} intro={page.intro} />
+  <FilterBar label="Filter publications" items="[data-cat]" filterKey="cat" filters={filters} />
+
+  {sections.map((s, si) => (
+    <Section id={s.key} heading={s.heading} cat={s.filter}>
+      {s.books.length > 0 && (
+        <div class="books">
+          {s.books.map((b, bi) => (
+            <article class="book">
+              <a href={b.url ?? b.doi} tabindex="-1" aria-hidden="true"><Img class="cover" src={b.cover!} alt={b.coverAlt ?? ''} widths={[200, 300, 400, 600]} sizes="(min-width: 861px) 210px, 45vw" loading={si === 0 && bi < 4 ? 'eager' : 'lazy'} /></a>
+              <h3>{b.url ? <a href={b.url}>{b.title}</a> : b.title}</h3>
+              <p class="m">{b.year} · {b.publisher}</p>
+              {b.details && (() => { const [text, lang] = splitLang(b.details); return <p class="d">{text}{lang && <span class="tag">{lang}</span>}</p>; })()}
+              <p class="l">
+                {b.doi && <a class="ext" href={b.doi}>DOI<Icon name="ext" /></a>}
+                {b.openAccess && <a class="ext" href={b.openAccess}>Open access<Icon name="ext" /></a>}
+              </p>
+            </article>
+          ))}
+        </div>
+      )}
+      {s.wip.length > 0 && (
+        <div class="wip"><Rows rows={s.wip.map((p) => ({ ...p, period: 'In progress' }))} /></div>
+      )}
+      {s.rows.length > 0 && <Rows rows={s.rows} />}
+    </Section>
+  ))}
+</Base>

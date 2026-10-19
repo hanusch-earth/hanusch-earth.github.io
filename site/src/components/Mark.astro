@@ -1,0 +1,17 @@
+---
+// The "Horizon" mark from hanusch-logo/SVG/hanusch-mark-negativ.svg, without
+// its background: a warm white disc cut by a horizon, neon behind the cut.
+// The neon band is wider than the cut so no dark seam shows along its edges.
+interface Props { class?: string; id: string }
+const { class: cls = 'mark', id } = Astro.props;
+---
+<svg class={cls} viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+  <clipPath id={`${id}-c`}><circle cx="50" cy="50" r="50" /></clipPath>
+  <mask id={`${id}-m`}>
+    <rect x="-6" y="-6" width="112" height="112" fill="#000" />
+    <circle cx="50" cy="50" r="50" fill="#fff" />
+    <path d="M-4 53 Q50 46 104 53" fill="none" stroke="#000" stroke-width="8.4" />
+  </mask>
+  <path d="M-4 53 Q50 46 104 53" fill="none" stroke="#D7FF00" stroke-width="12" clip-path={`url(#${id}-c)`} />
+  <rect x="-6" y="-6" width="112" height="112" fill="#F4F2ED" mask={`url(#${id}-m)`} />
+</svg>

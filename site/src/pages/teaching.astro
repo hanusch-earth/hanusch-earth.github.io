@@ -1,0 +1,20 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import Section from '../components/Section.astro';
+import Rows from '../components/Rows.astro';
+import { getPage, bySection } from '../lib/content';
+
+const page = await getPage('teaching');
+const sections = await Promise.all(
+  page.sections.map(async (s) => ({ ...s, rows: await bySection('teaching', s.key) })),
+);
+---
+<Base title={page.title} description={page.description} current="/teaching/">
+  <PageHero title={page.title} intro={page.intro} figure={page.figure} />
+  {sections.map((s) => (
+    <Section id={s.key} heading={s.heading} note={s.note}>
+      <Rows rows={s.rows} group={s.key !== 't-supervision'} />
+    </Section>
+  ))}
+</Base>

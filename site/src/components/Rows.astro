@@ -1,0 +1,42 @@
+---
+// A dated list (CV, teaching, projects, publications). Each year shows once.
+import Icon from './Icon.astro';
+import { withYearGroups, splitLang } from '../lib/content';
+
+interface Row {
+  period?: string | number;
+  title: string;
+  url?: string;
+  details?: string;
+  text?: string;
+  doi?: string;
+  links?: { label: string; url: string }[];
+}
+interface Props { rows: Row[]; group?: boolean }
+const { rows, group = true } = Astro.props;
+const items = withYearGroups(rows, (r) => r.period);
+---
+<div class="rows">
+  {items.map(({ row, label, repeat }) => (
+    <article class:list={['r', { rep: group && repeat }]}>
+      <p class="y">{label}</p>
+      <div>
+        <h3>{row.url ? <a href={row.url}>{row.title}<Icon name="ext" class="ti" /></a> : row.title}</h3>
+        {(row.details || row.doi) && (() => {
+          const [text, lang] = splitLang(row.details);
+          return (
+            <p class="d">
+              {text}
+              {row.doi && <>{text && ' · '}<a href={row.doi}>{row.doi.replace('https://', '')}</a></>}
+              {lang && <span class="tag">{lang}</span>}
+            </p>
+          );
+        })()}
+        {row.text && <p class="t">{row.text}</p>}
+        {row.links && (
+          <p class="l">{row.links.map((l) => <a class="ext" href={l.url}>{l.label}<Icon name="ext" /></a>)}</p>
+        )}
+      </div>
+    </article>
+  ))}
+</div>

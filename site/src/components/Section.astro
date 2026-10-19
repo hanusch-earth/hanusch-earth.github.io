@@ -1,0 +1,23 @@
+---
+// Two-column section: sticky heading on the left, content on the right.
+interface Props {
+  id: string;
+  heading: string;
+  note?: string;
+  more?: { label: string; href: string };
+  cat?: string;
+}
+const { id, heading, note, more, cat } = Astro.props;
+---
+<section class="sec" aria-labelledby={id} data-cat={cat}>
+  <div class="wrap">
+    <div class="in">
+      <div class="sh">
+        <h2 id={id}>{heading}</h2>
+        {note && <p>{note}</p>}
+        {more && <a class="more" href={more.href}>{more.label}</a>}
+      </div>
+      <div class="sb"><slot /></div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,21 @@
+# Only the website and its design documents belong in this repository.
+# Everything else in the project folder (logo files, research, drafts,
+# references, status notes) stays local.
+/*
+!/.gitignore
+!/.github/
+!/README.md
+!/PRODUCT.md
+!/DESIGN.md
+!/site/
+!/.impeccable/
+/.impeccable/*
+!/.impeccable/design.json
+!/.impeccable/surfaces/
+/.impeccable/surfaces/*
+!/.impeccable/surfaces/site-v2.md
+
+# Astro starter readme; the project readme is at the root
+/site/README.md
+.DS_Store
+/site/.vscode/

@@ -1,0 +1,114 @@
+[
+  {
+    "id": "t-introduction-to-one-health",
+    "order": 10,
+    "section": "t-modules",
+    "period": "2026/27",
+    "title": "Introduction to One Health",
+    "details": "M.Sc. module · MK-137-EN"
+  },
+  {
+    "id": "t-planetary-methods-in-the-humanities-and-social-sciences",
+    "order": 20,
+    "section": "t-modules",
+    "period": "2026/27",
+    "title": "Planetary Methods in the Humanities and Social Sciences",
+    "details": "M.Sc. module · MP-265-EN"
+  },
+  {
+    "id": "t-field-trips-to-sites-of-planetary-politics",
+    "order": 30,
+    "section": "t-modules",
+    "period": "2026",
+    "title": "Field Trips to Sites of Planetary Politics",
+    "details": "M.Sc. module · MP-270-EN"
+  },
+  {
+    "id": "t-planetary-thinking",
+    "order": 40,
+    "section": "t-modules",
+    "period": "2025 – 2026",
+    "title": "Planetary Thinking",
+    "details": "M.Sc. module · MK-132-EN-DI"
+  },
+  {
+    "id": "t-foundations-of-planetary-thinking",
+    "order": 50,
+    "section": "t-modules",
+    "period": "2020 – 2021",
+    "title": "Foundations of Planetary Thinking",
+    "details": "M.A. module"
+  },
+  {
+    "id": "t-shaping-public-opinion-on-planetary-infrastructure-the-case-of-small-modular-rea",
+    "order": 60,
+    "section": "t-supervision",
+    "period": "Since 2026",
+    "title": "Shaping Public Opinion on Planetary Infrastructure: The Case of Small Modular Reactors",
+    "details": "Doctoral project · first supervisor"
+  },
+  {
+    "id": "t-andean-women-s-ways-of-knowing-through-andean-peasant-agriculture",
+    "order": 70,
+    "section": "t-supervision",
+    "period": "2026",
+    "title": "Andean Women’s Ways of Knowing through Andean Peasant Agriculture",
+    "details": "Doctoral thesis · second supervisor"
+  },
+  {
+    "id": "t-closing-the-greenwashing-gap-real-time-environmental-non-compliance-disclosure-f",
+    "order": 80,
+    "section": "t-supervision",
+    "period": "2026",
+    "title": "Closing the Greenwashing Gap: Real-Time Environmental Non-Compliance Disclosure for Risk Transparency in EU Sustainable Finance",
+    "details": "M.Sc. thesis · Transition Management"
+  },
+  {
+    "id": "t-how-automation-technology-shapes-ethical-human-cow-relations-and-planetary-aware",
+    "order": 90,
+    "section": "t-supervision",
+    "period": "2025",
+    "title": "How Automation Technology Shapes Ethical Human-Cow Relations and Planetary Awareness on an Organic Dairy Farm",
+    "details": "M.Sc. thesis · Sustainable Transition"
+  },
+  {
+    "id": "t-wer-spricht-fur-das-wasser-planetare-gesundheit-im-politischen-aushandlungsfeld",
+    "order": 100,
+    "section": "t-supervision",
+    "period": "2026",
+    "title": "Wer spricht für das Wasser? Planetare Gesundheit im politischen Aushandlungsfeld",
+    "details": "B.Sc. thesis · Environment and Global Change"
+  },
+  {
+    "id": "t-examiner-in-several-doctoral-defenses",
+    "order": 110,
+    "section": "t-supervision",
+    "period": "2025 – 2026",
+    "title": "Examiner in several doctoral defenses",
+    "details": "Justus Liebig University Giessen"
+  },
+  {
+    "id": "t-nachhaltigkeit-und-demokratie",
+    "order": 120,
+    "section": "t-earlier",
+    "period": "2017 – 2019",
+    "title": "Nachhaltigkeit und Demokratie",
+    "details": "Sustainability and Democracy · M.A. seminar, co-taught · University of Potsdam"
+  },
+  {
+    "id": "t-zeit-demokratie-und-globaler-wandel",
+    "order": 130,
+    "section": "t-earlier",
+    "period": "2017/18",
+    "title": "Zeit, Demokratie und globaler Wandel",
+    "details": "Time, Democracy and Global Change · M.A. seminar · Heidelberg University"
+  },
+  {
+    "id": "t-die-herausforderung-der-demokratie-durch-den-klimawandel",
+    "order": 140,
+    "section": "t-earlier",
+    "period": "2016",
+    "title": "Die Herausforderung der Demokratie durch den Klimawandel",
+    "details": "The Climate Change Challenge for Democracy · M.A. seminar · Heidelberg University"
+  }
+]

@@ -1,0 +1,23 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import Section from '../components/Section.astro';
+import Icon from '../components/Icon.astro';
+import { getPage, site } from '../lib/content';
+
+const page = await getPage('contact');
+const [address, profiles] = page.sections;
+const [mailUser, mailHost] = site.email.split('@');
+---
+<Base title={page.title} description={page.description} current="/contact/">
+  <PageHero title={page.title} figure={page.figure}>
+    <a class="mail" href={`mailto:${site.email}`}><span>{mailUser}</span><wbr /><span>@{mailHost}</span></a>
+    <h2 class="addr-h">{address.heading}</h2>
+    <div class="addr" set:html={address.html} />
+  </PageHero>
+  <Section id={profiles.key} heading={profiles.heading}>
+    <nav class="profiles flush" aria-label="Academic profiles">
+      {site.profiles.map((p) => <a class="ext" href={p.url}>{p.label}<Icon name="ext" /></a>)}
+    </nav>
+  </Section>
+</Base>

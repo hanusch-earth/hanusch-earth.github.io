@@ -130,7 +130,7 @@ a:hover{text-decoration-color:var(--ink)}
 .tag{display:inline-block;margin-left:8px;padding:1px 7px;border:1px solid var(--line-strong);border-radius:4px;font-family:var(--display);font-size:12px;line-height:1.5;letter-spacing:.02em;color:var(--dim);vertical-align:2px;white-space:nowrap}
 @media (max-width:560px){
   .r{grid-template-columns:1fr;row-gap:2px}
-  .r.rep .y{display:none}
+  .r.rep .y{visibility:visible} /* no year column on phones: every row shows its period */
 }
 
 /* rows with a format icon (media) */

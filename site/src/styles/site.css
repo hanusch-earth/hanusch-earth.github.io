@@ -181,7 +181,7 @@ a:hover > .cover,.book:hover .cover{filter:none}
   .intro .top{column-gap:16px}
   .intro h1{font-size:clamp(30px,8.6vw,46px)}
   .intro .ph{margin-bottom:0;padding-bottom:16px}
-  .intro .credit{margin-top:8px}
+  .intro .credit{margin-top:8px;font-size:11px;line-height:1.35;letter-spacing:0}
   .intro .txt{max-width:none;padding-top:28px}
 }
 

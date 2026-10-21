@@ -18,7 +18,7 @@ Baserow (Inhalte) ──„Publish now“──▶ GitHub Actions (baut die Seit
 | Was | Wo |
 |---|---|
 | Inhalte | Baserow Cloud, Workspace „Hanusch.Earth“, Datenbank „Webseite“: https://baserow.io |
-| Live-Seite | https://hanusch-earth.github.io (später https://www.hanusch.earth) |
+| Live-Seite | https://www.hanusch.earth |
 | Code (Layout, Design, Seitenaufbau) | https://github.com/hanusch-earth/hanusch-earth.github.io, öffentlich |
 | Builds | https://github.com/hanusch-earth/hanusch-earth.github.io/actions |
 

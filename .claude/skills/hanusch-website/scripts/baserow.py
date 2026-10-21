@@ -36,7 +36,7 @@ from pathlib import Path
 BASEROW = 'https://api.baserow.io'
 DATABASE_ID = 597662  # workspace "Hanusch.Earth", database "Webseite"
 REPO = 'hanusch-earth/hanusch-earth.github.io'
-SITE = 'https://hanusch-earth.github.io'  # change to https://www.hanusch.earth once the domain points to GitHub Pages
+SITE = 'https://www.hanusch.earth'
 TOKEN_FILE = Path.home() / '.config' / 'hanusch-website' / 'baserow-token'
 
 

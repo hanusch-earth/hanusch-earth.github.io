@@ -151,6 +151,7 @@ a:hover > .cover,.book:hover .cover{filter:none}
 .book h3{margin-top:18px;font-family:var(--display);font-weight:400;font-size:19px;line-height:1.3;letter-spacing:-.005em;color:var(--ink);text-wrap:balance}
 .book h3 a{text-decoration-color:transparent}
 .book h3 a:hover{text-decoration-color:var(--ink)}
+.book .sub{margin-top:4px;font-family:var(--display);font-size:16px;line-height:1.35;color:var(--dim);text-wrap:balance}
 .book .m{margin-top:6px;font-family:var(--display);font-size:14px;color:var(--dim)}
 .book .d{margin-top:6px;font-size:16px;line-height:1.45;color:var(--dim)}
 .book .l{margin-top:12px;display:flex;flex-wrap:wrap;gap:6px 18px;font-family:var(--display);font-size:15px}

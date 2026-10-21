@@ -49,6 +49,7 @@ const publications = defineCollection({
     status: z.enum(['published', 'in-progress']).default('published'),
     year: z.number().int().optional(),
     title: z.string(),
+    subtitle: z.string().optional(),
     url: z.url().optional(),
     publisher: z.string().optional(),
     details: z.string().optional(),

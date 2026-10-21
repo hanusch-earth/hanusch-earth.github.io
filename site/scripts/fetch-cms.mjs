@@ -175,6 +175,7 @@ for (const [i, p] of byYear(await rows(tables, 'Publications')).entries()) {
     status: STATUS[option(p.Status)] ?? 'published',
     year: num(p.Year),
     title: text(p.Title),
+    subtitle: text(p.Subtitle),
     url: text(p.URL),
     publisher: text(p.Publisher),
     details: text(p.Details),

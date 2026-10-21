@@ -45,6 +45,7 @@ Tabelle **Sections**: die Zwischenüberschriften jeder Seite (`Heading`) und ein
 | Feld | Hinweis |
 |---|---|
 | `Title` | Titel |
+| `Subtitle` | Untertitel, erscheint direkt unter dem Titel (nur bei Büchern mit Cover) |
 | `Category` | Monograph · Edited volume · Journal article · Book chapter · Report & other (bestimmt den Abschnitt) |
 | `Status` | Published · In progress |
 | `Year` | Jahr (Zahl) |

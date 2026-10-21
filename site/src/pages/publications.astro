@@ -60,6 +60,7 @@ const filters = [
             <article class="book">
               <a href={b.url ?? b.doi} tabindex="-1" aria-hidden="true"><Img class="cover" src={b.cover!} alt={b.coverAlt ?? ''} widths={[200, 300, 400, 600]} sizes="(min-width: 861px) 210px, 45vw" loading={si === 0 && bi < 4 ? 'eager' : 'lazy'} /></a>
               <h3>{b.url ? <a href={b.url}>{b.title}</a> : b.title}</h3>
+              {b.subtitle && <p class="sub">{b.subtitle}</p>}
               <p class="m">{b.year} · {b.publisher}</p>
               {b.details && (() => { const [text, lang] = splitLang(b.details); return <p class="d">{text}{lang && <span class="tag">{lang}</span>}</p>; })()}
               {/* cover and title lead to the publisher; open access, if any, below */}

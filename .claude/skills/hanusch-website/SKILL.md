@@ -1,6 +1,6 @@
 ---
 name: hanusch-website
-description: Inhalte der Website hanusch.earth (Prof. Dr. Frederic Hanusch) in Baserow ändern und veröffentlichen. Verwenden, wenn neue Publikationen, Medienauftritte, Lebenslauf- oder Lehreinträge, Forschungsfelder, Projekte, Texte, Fotos, das hervorgehobene Buch auf der Startseite oder Profil-Links hinzugefügt, geändert oder entfernt werden sollen, oder wenn die Website neu veröffentlicht werden soll.
+description: Inhalte der Website hanusch.earth (Prof. Dr. Frederic Hanusch) in Baserow ändern und veröffentlichen. Verwenden, wenn neue Publikationen, Medienauftritte, Lebenslauf- oder Lehreinträge, Forschungsfelder, Projekte, Texte, Fotos, das hervorgehobene Buch auf der Startseite oder Profil-Links hinzugefügt, geändert oder entfernt werden sollen, oder wenn die Website neu veröffentlicht werden soll. Auch für Änderungen an Layout, Design oder Seitenaufbau im Repository (nur mit ausdrücklicher Zustimmung).
 ---
 
 # Website hanusch.earth pflegen
@@ -64,9 +64,16 @@ Prüfe zuerst mit `baserow.py check`, ob schon ein Token gespeichert ist. Wenn n
 - **Reihenfolge:** Publications und Media sortiert die Seite automatisch nach Jahr (neueste zuerst). Überall sonst gilt die Reihenfolge der Zeilen in Baserow; neue Einträge mit `create … --before <id>` an die richtige Stelle setzen oder danach mit `move` verschieben.
 - **Unvollständige Zeilen** (z. B. Media ohne Jahr) lässt der Build aus und meldet sie unter Actions als Warnung. `publish --check` merkt das, weil der Text dann nicht online erscheint.
 
-## Was nicht über Baserow geht
+## Was nicht über Baserow geht: Änderungen am Code
 
-Layout, Farben, Schriften, neue Seiten oder Rubriken, neue Audio-Dateien (MP3s liegen im Repository unter `site/public/audio/`), die Domain und alles am Build sind Code-Änderungen im Repository. Das ist Aufgabe des Entwicklers der Seite. Sag ihm das offen, beschreib kurz, was geändert werden müsste, und biete an, eine Nachricht an den Entwickler zu formulieren. Ändere nichts im Repository, wenn er dich nicht ausdrücklich darum bittet.
+Layout, Farben, Schriften, neue Seiten oder Rubriken, neue Audio-Dateien (MP3s liegen unter `site/public/audio/`) und alles am Build sind Änderungen im Repository. Er hat vollen Zugriff darauf; du kannst sie also für ihn machen, aber **nur, wenn er dem bewusst zustimmt**:
+
+1. Sag ihm, dass das keine Inhaltsänderung ist, sondern eine Änderung am Code der Website, beschreib kurz, was du ändern würdest, und dass die Seite danach automatisch neu gebaut wird. Biete als Alternative an, eine Nachricht an den Entwickler zu formulieren.
+2. Leg erst los, wenn er ausdrücklich zustimmt („ja, mach das“). Schweigen, ein „ok“ auf etwas anderes oder eine frühere Zustimmung zählen nicht; jede Code-Änderung braucht ihr eigenes Ja.
+3. Ist das Repository auf seinem Rechner noch nicht eingerichtet, hilf ihm Schritt für Schritt dabei: [reference/code.md](reference/code.md) (Git, GitHub CLI, Anmeldung, Repository holen, Node).
+4. Ablauf, Regeln und Veröffentlichen ebenfalls in [reference/code.md](reference/code.md). Kurz: Stand holen, ändern, lokal bauen und ansehen, ihm das Ergebnis zeigen, **nach seinem zweiten Ja** committen und pushen, dranbleiben bis live.
+
+Domain, DNS und GitHub-Einstellungen (Secrets, Pages, Workflow) fasst du nicht an; dafür ist der Entwickler zuständig.
 
 ## Wenn etwas nicht klappt
 

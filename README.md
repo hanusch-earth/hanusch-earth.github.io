@@ -1,6 +1,6 @@
 # hanusch.earth
 
-Website of Prof. Dr. Frederic Hanusch, Professor of Planetary Change and Politics at Justus Liebig University Giessen. Live at https://www.hanusch.earth (test address until the domain moves: https://hanusch-earth.github.io).
+Website of Prof. Dr. Frederic Hanusch, Professor of Planetary Change and Politics at Justus Liebig University Giessen. Live at https://www.hanusch.earth.
 
 ## Structure
 
@@ -14,7 +14,7 @@ Website of Prof. Dr. Frederic Hanusch, Professor of Planetary Change and Politic
 | `site/src/assets/img/` | photos and covers (resized at build time) |
 | `site/public/` | fonts, audio, favicons, share image, robots.txt |
 | `site/scripts/fetch-cms.mjs` | pulls the content from Baserow |
-| `.claude/skills/hanusch-website/` | skill for editing the content with Claude (Baserow + publish) |
+| `.claude/skills/hanusch-website/` | skill for editing the content with Claude (Baserow + publish; code changes only with explicit consent) |
 | `PRODUCT.md`, `DESIGN.md`, `.impeccable/` | product context and design system |
 
 ## Editing content

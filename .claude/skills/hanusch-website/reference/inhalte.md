@@ -70,7 +70,7 @@ Beispiel (Werte ausgedacht, nur zur Form):
 | `Format` | Writing · Audio · Video (Filter und Symbol) |
 | `Details` | Medium, Sendung, Art; optional „· German“ am Ende |
 | `URL` | Link zum Beitrag |
-| `Audio file`, `Duration (seconds)` | nur für MP3s, die mit der Website ausgeliefert werden (neue MP3s: Entwickler) |
+| `Audio file`, `Duration (seconds)` | nur für MP3s, die mit der Website ausgeliefert werden; eine neue MP3 ist eine Code-Änderung (siehe code.md) |
 | `Links` | weitere Links, `Label | URL` pro Zeile |
 
 Sortierung automatisch nach Jahr.

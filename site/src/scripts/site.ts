@@ -1,4 +1,9 @@
-// hanusch.earth – menu on small screens and list filters
+// hanusch.earth – menu on small screens, list filters, external links
+
+// links to other sites open in a new tab
+document.querySelectorAll<HTMLAnchorElement>('a[href^="http"]').forEach((a) => {
+  if (a.origin !== location.origin) { a.target = '_blank'; a.rel = 'noopener'; }
+});
 
 const menu = document.getElementById('site-menu');
 if (menu) {

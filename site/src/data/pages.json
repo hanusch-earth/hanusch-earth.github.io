@@ -103,9 +103,9 @@
   {
     "id": "media",
     "title": "Media",
-    "description": "Essays, interviews, talks and radio and television appearances by Frederic Hanusch on planetary politics, democracy and climate change.",
+    "description": "Essays, interviews and radio and television appearances by Frederic Hanusch on planetary politics, democracy and climate change.",
     "intro": [
-      "Essays, interviews, talks and appearances on radio and television."
+      "Essays, interviews and appearances on radio and television."
     ],
     "figure": {
       "src": "media-scobel-3sat.jpg",
@@ -126,8 +126,8 @@
     "title": "Curriculum Vitae",
     "description": "Curriculum vitae of Frederic Hanusch, Professor of Planetary Change and Politics at Justus Liebig University Giessen: positions, service, education, grants.",
     "intro": [
-      "Frederic Hanusch is Professor of Planetary Change and Politics at Justus Liebig University Giessen. He develops the <em>planetarities</em> as a new research field that engages with planetary change, and investigates planetary politics in particular.",
-      "He is co-founder and director of the Panel on Planetary Thinking, course director of the M.Sc. One Health, and a member of the British Academy and Carnegie Endowment working group on Transnational and Planetary Challenges. He reviews for journals including <em>Nature Climate Change</em>, <em>Global Environmental Change</em> and <em>Earth System Governance</em>, and for presses including MIT Press, Oxford University Press and the University of Chicago Press. He regularly appears in newspapers, on radio and on television."
+      "Frederic Hanusch is Professor of Planetary Change and Politics at Justus Liebig University Giessen.",
+      "He is co-founder and director of the Panel on Planetary Thinking, course director of the M.Sc. One Health, and a member of the British Academy and Carnegie Endowment working group on Transnational and Planetary Challenges. He reviews for presses including MIT Press, Oxford University Press and the University of Chicago Press, and for journals including <em>Nature Climate Change</em>, <em>Global Environmental Change</em> and <em>Earth System Governance</em>. He regularly appears in newspapers, on radio and on television."
     ],
     "figure": {
       "src": "cv-futur21-conference.jpg",

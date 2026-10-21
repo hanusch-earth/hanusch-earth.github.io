@@ -62,10 +62,8 @@ const filters = [
               <h3>{b.url ? <a href={b.url}>{b.title}</a> : b.title}</h3>
               <p class="m">{b.year} · {b.publisher}</p>
               {b.details && (() => { const [text, lang] = splitLang(b.details); return <p class="d">{text}{lang && <span class="tag">{lang}</span>}</p>; })()}
-              <p class="l">
-                {b.doi && <a class="ext" href={b.doi}>DOI<Icon name="ext" /></a>}
-                {b.openAccess && <a class="ext" href={b.openAccess}>Open access<Icon name="ext" /></a>}
-              </p>
+              {/* cover and title lead to the publisher; open access, if any, below */}
+              {b.openAccess && <p class="l"><a class="ext" href={b.openAccess}>Open access<Icon name="ext" /></a></p>}
             </article>
           ))}
         </div>
